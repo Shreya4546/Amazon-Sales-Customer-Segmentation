@@ -1,118 +1,70 @@
-# Amazon-Sales-Customer-Segmentation Dashboard
+# Amazon Sales & Customer Segmentation Analysis
+### Python Â· Excel Â· Power BI Â· DAX
 
-## 1. 🧾 Project Title / Headline
-
-**Amazon Sales & Customer Segmentation Analysis Using Python, Excel & Power BI**
-
-A comprehensive data analysis project utilizing Python, Excel, and Power BI to uncover insights from Amazon sales data for 2025. The project explores sales performance, order statuses, and customer behavior, focusing on identifying key sales trends, understanding cancellation patterns, and segmenting customers based on spending. These insights support data-driven strategies to optimize revenue, reduce churn, and enhance customer retention.
+End-to-end sales analysis of 250 Amazon orders (Febâ€“Apr 2025) covering revenue trends, customer segmentation, and cancellation diagnostics â€” delivered as a 3-page interactive Power BI dashboard.
 
 ---
 
-## 2. 📝 Short Description / Purpose
+## Business Questions Addressed
 
-The goal of this project is to perform deep analysis of Amazon’s transactional sales data to uncover:
-- Sales trends by product, category, and payment method
-- Order status breakdown (Completed, Cancelled, Pending)
-- Customer segmentation (Top vs Regular buyers)
-
-This supports strategic decisions in marketing, customer engagement, inventory planning, and revenue optimization.
+1. Which product categories and months drive the most revenue?
+2. How do Top vs Regular customers differ in spend and order volume?
+3. Where are cancellations concentrated â€” by category and payment method?
+4. Which payment methods are preferred by high-value customers?
 
 ---
 
-## 3. 🛠️ Tech Stack
+## Key Findings
 
-Tools and technologies used:
-
-• 🧮 **Excel** – For basic data inspection, formatting, and column cleanup  
-• 🐍 **Python (Pandas, Seaborn, Matplotlib)** – For data cleaning, transformation, EDA, and feature engineering  
-• 📊 **Power BI Desktop** – For interactive business dashboards  
-• 🧠 **DAX** – To compute KPIs like Avg Order Value, Total Sales  
-• 📂 **Power Query Editor** – To shape and filter imported data  
-• 💾 **File Formats** – `.csv`, `.ipynb`, `.pbix`
-
----
-
-## 4. 📚 Data Source
-
-An Amazon sales transaction dataset including fields like:
-
-* `Order ID`, `Date`, `Product`, `Category`
-* `Price`, `Quantity`, `Total Sales`
-* `Customer Name`, `Location`, `Payment Method`, `Status`
-* Enriched with: `Month`, `Year`, `Week`, and `Customer Type`
-
-> 📌 **Excel was used** for correcting missing values, column alignments, and formatting inconsistencies.
+| Metric | Value |
+|---|---|
+| Total Sales | â‚¹244K across 250 orders |
+| Avg Order Value | â‚¹975.38 |
+| Top category | Electronics (â‚¹130K) + Home Appliances (â‚¹105K) = 95%+ of revenue |
+| Peak month | February (â‚¹123K), followed by March (â‚¹118K) |
+| Top customer segment | "Top" buyers â€” â‚¹147K in sales, ~60% of total revenue, 55.6% of orders |
+| Highest cancellation category | Home Appliances (â‚¹36K cancelled) |
+| Cancellations by payment | PayPal (32.37%) and Debit Card (30.73%) drove most cancelled order value |
+| Credit Card cancellation | 32% of all cancellations came from Credit Card users |
 
 ---
 
-## 5. ⭐ Features / Highlights
+## Dashboard Pages
 
-### • Business Problem
+### Page 1 â€” Sales Overview
+KPIs: Total Sales Â· Total Orders Â· Avg Order Value
 
-Without detailed sales insights, it's hard to optimize performance, understand customer behavior, or reduce cancellations. Businesses need visibility across all transaction types to improve decisions around marketing, support, and product supply.
+- Sales peaked in February at â‚¹123K, dropping to â‚¹3K in April
+- Electronics and Home Appliances together account for over 95% of revenue
+- Credit Card (28.56%) and Amazon Pay (25.26%) are the top payment methods by volume
 
----
+### Page 2 â€” Customer Insights
+- Top customers (55.6% of orders) generated â‚¹147K vs â‚¹96K from Regular customers
+- Top 3 customers by revenue: Olivia Wilson (â‚¹36,170) Â· Jane Smith (â‚¹31,185) Â· Emma Clark (â‚¹29,700)
+- Customer base spans multiple US cities including New York, San Francisco, and Chicago
 
-### • Goal of the Analysis
-
-To build a clean and interactive dashboard that:
-
-✅ Analyzes sales by category, payment method, and status  
-✅ Identifies which customers are top spenders  
-✅ Reveals cancellation trends by category and payment method  
-✅ Supports business planning with product and location insights  
-
----
-
-### • Walkthrough of Key Components
-
-#### 🐍 Python Script (`amazon_sales_analysis.ipynb`)
-
-* Cleaned raw data: date formats, calculated sales, handled nulls  
-* Created new columns: `Month`, `Year`, `Week`  
-* Labeled `Customer Type` by tagging top spenders as `"Top"`  
-* Filtered datasets by `Completed`, `Cancelled`, and `Pending`  
-* Exported final cleaned dataset for Power BI  
+### Page 3 â€” Order Status Analysis
+- Home Appliances had the highest cancellation value (â‚¹36K), followed by Electronics (â‚¹27K)
+- Cancellations spiked in March compared to February
+- PayPal and Debit Card together account for over 63% of cancelled order value â€” signals potential payment flow issues
 
 ---
 
-#### 📊 Power BI Dashboard (`Amazon_Sales_Dashboard.pbix`)
+## Tech Stack
 
-**Dashboard Pages**
-
-📄 **Page 1: Sales Overview**
-- KPIs: Total Sales, Orders, Avg Order Value
-- Sales by Category, Month, Payment Method
-- Slicers: Month, Category, Payment Method
-
-📄 **Page 2: Customer Insights**
-- Sales by Customer Type
-- Customer Location Map
-- Top Customer Table
-- Slicers: Customer Type, Location
-
-📄 **Page 3: Order Status Analysis**
-- Completed vs Cancelled vs Pending (Column Chart)
-- Cancelled Sales by Category & Payment Method
-- Slicers: Status, Month, Category
+| Tool | Usage |
+|---|---|
+| Python (Pandas, Matplotlib, Seaborn) | Data cleaning, EDA, feature engineering, customer type labelling |
+| Excel | Initial inspection, formatting, null handling |
+| Power BI + DAX | 3-page interactive dashboard, KPI cards, cohort visuals |
+| Power Query | Data shaping and filtering |
 
 ---
 
-### • Business Impact & Insights
+## Files
 
-🔹 **Top 3 Customers** contributed significantly to total revenue  
-🔹 **Pending & Cancelled Orders** were concentrated in certain product categories  
-🔹 **Digital Wallets** were popular among top spenders  
-🔹 Cancellation patterns suggested inventory or payment flow issues  
-
----
-
-## 6. 📂 Files & GitHub Links
-
-```markdown
-- [📓 Python Notebook](https://github.com/Shreya4546/Amazon-Sales-Customer-Segmentation-/blob/main/Sales%20Analysis.ipynb)
-- [📄 Cleaned Dataset](https://github.com/Shreya4546/Amazon-Sales-Customer-Segmentation-/blob/main/amazon_sales_data.csv)
-- [📊 Power BI Dashboard](https://github.com/Shreya4546/Amazon-Sales-Customer-Segmentation-/blob/main/Amazon%20Sales%20Dashboard.pbix)
-
-
-
+| File | Description |
+|---|---|
+| `Sales Analysis.ipynb` | Python notebook â€” cleaning, EDA, customer segmentation |
+| `amazon_sales_data.csv` | Cleaned dataset ready for Power BI |
+| `Amazon Sales Dashboard.pbix` | Full 3-page Power BI dashboard |
